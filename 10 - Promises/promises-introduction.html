@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promises!</title>
+</head>
+<body>
+<script>
+// fetch is built into the browser
+// not gonna happen right away, hence need for promises
+const postsPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+
+postsPromise
+  .then(data => data.json())
+  .then(data => { console.log(data) })
+  .catch((err) => {
+    console.error(err);
+  })
+
+</script>
+</body>
+</html>
