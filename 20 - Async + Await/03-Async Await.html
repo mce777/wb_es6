@@ -16,8 +16,11 @@
       });
     }
 
+    // a fn that takes another fn as an argument
+    // only there to catch errors
     function catchErrors(fn) {
       return function (...args) {
+        // fn will run normally if ok, and run the catch err code if not ok
         return fn(...args).catch((err) => {
           console.error('Ohhhh nooo!!!!!');
           console.error(err);

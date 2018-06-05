@@ -21,6 +21,8 @@
 
     async function getData(names) {
       const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(r => r.json()));
+
+      // promise.all is one big mega promise
       const people = await Promise.all(promises);
       console.log(people);
     }
