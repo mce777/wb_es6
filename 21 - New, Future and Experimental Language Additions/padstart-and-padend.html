@@ -10,6 +10,7 @@
     const strings = ['short', 'medium size', 'this is really really long', 'this is really reall really really really really long'];
     const longestString = strings.sort(str => str.length).map(str => str.length)[0];
 
+    // this will right align with the longest string being the basis
     strings.forEach(str => console.log(str.padStart(longestString)));
   </script>
 </body>
